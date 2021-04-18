@@ -1,0 +1,741 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="MinimizeSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Canvas>
+                    <Rectangle Width="24"
+                               Height="24"
+                               Fill="Transparent" />
+                    <Rectangle Canvas.Left="8"
+                               Canvas.Top="15"
+                               Width="16"
+                               Height="4"
+                               Fill="{TemplateBinding Foreground}"
+                               StrokeThickness="0.3" />
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="CloseSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Canvas />
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="m 14.8 12 3.6 -3.6 c 0.8 -0.8 0.8 -2 0 -2.8 -0.8 -0.8 -2 -0.8 -2.8 0 L 12 9.2 8.4 5.6                                                       c -0.8 -0.8 -2 -0.8 -2.8 0 -0.8 0.8 -0.8 2 0 2.8 L 9.2 12 5.6 15.6 c -0.8 0.8 -0.8 2 0 2.8                                                       C 6 18.8 6.5 19 7 19 7.5 19 8 18.8 8.4 18.4 l 3.6 -3.6 3.6 3.6                                                        c 0.4 0.4 0.9 0.6 1.4 0.6 0.5 0 1 -0.2 1.4 -0.6 0.8 -0.8 0.8 -2 0 -2.8 z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="LogoutSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="533"
+                    Height="533">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="533"
+                           Height="533"
+                           Fill="Transparent" />
+                <Canvas>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M416.667 333.333v-66.666H250V200h166.667v-66.667l100 100L416.667 333.333z M383.333 300v133.333H216.667v100l-200-100V0   h366.667v166.667H350V33.333H83.333L216.667 100v300H350V300H383.333z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="NotificationSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="20" Height="20">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="20"
+                           Height="20"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M4 8a6 6 0 0 1 4.03-5.67 2 2 0 1 1 3.95 0A6 6 0 0 1 16 8v6l3 2v1H1v-1l3-2V8zm8 10a2 2 0 1 1-4 0h4z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SaveSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="500" Height="500">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="500"
+                           Height="500"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M 0 50 C 0 22.5 22.5 0 50 0 h 350 l 100 100 v 350 a 50 50 0 0 1 -50 50 H 50 A 50 50 0 0 1 0 450 Z m 125 0 V 200 H 375 V 50 Z m 150 25 h 75 v 100 h -75 z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="CloneSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="35" Height="35">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="35"
+                           Height="35"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M20.717 34.748H3.616A3.37 3.37 0 0 1 .25 31.381v-17.1a3.369 3.369 0 0 1 3.366-3.365h17.1a3.368 3.368 0 0 1 3.365 3.365v17.1A3.369 3.369 0 0 1 20.717 34.748ZM3.616 13.416a.866.866 0 0 0-.866.865v17.1a.867.867 0 0 0 .866.867h17.1a.867.867 0 0 0 .865-.867v-17.1a.865.865 0 0 0-.865-.865Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M31.384 24.079H22.837a1.25 1.25 0 1 1 0-2.5h8.547a.867.867 0 0 0 .866-.866V3.618a.866.866 0 0 0-.866-.865h-17.1a.866.866 0 0 0-.866.865v8.548a1.25 1.25 0 0 1-2.5 0V3.618A3.369 3.369 0 0 1 14.279.253H31.384A3.369 3.369 0 0 1 34.75 3.618v17.1A3.37 3.37 0 0 1 31.384 24.079Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="PlaySVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M 9.6002223 17.3995 16.799555 12 9.6002223 6.6005002 Z M 12 0.00111157 C 5.3766136 0.00111157 0.00111157 5.3766135 0.00111157 12 0.00111157 18.623386 5.3766136 23.998889 12 23.998889 18.623387 23.998889 23.998889 18.623386 23.998889 12 23.998889 5.3766135 18.623387 0.00111157 12 0.00111157 Z M 12 21.59911 C 6.7084902 21.59911 2.4008893 17.291509 2.4008893 12 2.4008893 6.7084902 6.7084902 2.4008893 12 2.4008893 c 5.29151 0 9.599111 4.3076009 9.599111 9.5991107 0 5.291509 -4.307601 9.59911 -9.599111 9.59911 z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="StopSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="140"
+                    Height="140">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="140"
+                           Height="140"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M130.792 35.054C111.443 1.533 68.573-9.954 35.055 9.404C1.533 28.754-9.954 71.619 9.404 105.139     c19.351 33.52 62.215 45.008 95.735 25.652C138.659 111.435 150.147 68.573 130.792 35.054z M98.13 118.649     c-26.816 15.485-61.106 6.297-76.588-20.522C6.057 71.314 15.246 37.021 42.063 21.542c26.814-15.485 61.108-6.296 76.589 20.521     C134.135 68.879 124.947 103.167 98.13 118.649z M84.113 49.068H56.081c-3.869 0-7.009 3.14-7.009 7.012v28.03     c0 3.87 3.14 7.008 7.009 7.008h28.032c3.871 0 7.009-3.138 7.009-7.008V56.08C91.122 52.205 87.984 49.068 84.113 49.068z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ShowSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="16"
+                    Height="16">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="16"
+                           Height="16"
+                           Fill="Transparent" />
+                <Canvas>
+                    <Ellipse Canvas.Left="7"
+                             Canvas.Top="7"
+                             Width="2"
+                             Height="2"
+                             Fill="{TemplateBinding Foreground}" />
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M8 2.981c-5.003 0-8 5.009-8 5.009s2.985 5.029 8 5.029s8-5.029 8-5.029S13.003 2.981 8 2.981z    M8 10.99c-1.657 0-3-1.343-3-3s1.343-3 3-3s3 1.343 3 3S9.657 10.99 8 10.99z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SecuritySVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="485"
+                    Height="485">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Canvas>
+                    <Rectangle Width="485"
+                               Height="485"
+                               Fill="Transparent" />
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M363.908 212.282v-90.978C363.908 54.434 309.509 0 242.606 0c-66.884 0-121.302 54.434-121.302 121.304v90.978   c-33.498 0-60.653 27.158-60.653 60.648v151.629c0 33.5 27.155 60.653 60.653 60.653h242.604c33.491 0 60.653-27.153 60.653-60.653   V272.93C424.562 239.439 397.399 212.282 363.908 212.282z M257.77 359.257v50.139c0 8.382-6.781 15.163-15.163 15.163   c-8.382 0-15.164-6.781-15.164-15.163v-50.139c-8.9-5.269-15.161-14.57-15.161-25.673c0-16.765 13.579-30.327 30.324-30.327   c16.745 0 30.326 13.562 30.326 30.327C272.933 344.687 266.665 353.989 257.77 359.257z M303.255 212.282h-121.3v-90.978   c0-33.465 27.2-60.653 60.651-60.653c33.435 0 60.648 27.188 60.648 60.653V212.282z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="CookieSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M12 3A9 9 0 0 0 3 12A9 9 0 0 0 12 21A9 9 0 0 0 21 12C21 11.5 20.96 11 20.87 10.5C20.6 10 20 10 20 10H18V9C18 8 17 8 17 8H15V7C15 6 14 6 14 6H13V4C13 3 12 3 12 3M9.5 6A1.5 1.5 0 0 1 11 7.5A1.5 1.5 0 0 1 9.5 9A1.5 1.5 0 0 1 8 7.5A1.5 1.5 0 0 1 9.5 6M6.5 10A1.5 1.5 0 0 1 8 11.5A1.5 1.5 0 0 1 6.5 13A1.5 1.5 0 0 1 5 11.5A1.5 1.5 0 0 1 6.5 10M11.5 11A1.5 1.5 0 0 1 13 12.5A1.5 1.5 0 0 1 11.5 14A1.5 1.5 0 0 1 10 12.5A1.5 1.5 0 0 1 11.5 11M16.5 13A1.5 1.5 0 0 1 18 14.5A1.5 1.5 0 0 1 16.5 16H16.5A1.5 1.5 0 0 1 15 14.5H15A1.5 1.5 0 0 1 16.5 13M11 16A1.5 1.5 0 0 1 12.5 17.5A1.5 1.5 0 0 1 11 19A1.5 1.5 0 0 1 9.5 17.5A1.5 1.5 0 0 1 11 16Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ResetSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="16" Height="16">
+                <Rectangle Width="16"
+                           Height="16"
+                           Fill="Transparent" />
+                <Canvas>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M3 14h13v1H3z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M9.984 1a1 1 0 00-.691.294l-8.5 8.5a1 1 0 000 1.414L2.586 13h6.828l5.793-5.793a1 1 0 000-1.414l-4.5-4.5a1 1 0 00-.723-.292zM6.401 6.9l3.137 3.095s.5.5 0 1L8.56 12H3.398l-1.584-1.5 3.587-3.601c.5-.5 1 0 1 0z" FillRule="EvenOdd" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DeleteSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="512" Height="512">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="47" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="512"
+                           Height="512"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="m416.875 114.441406-11.304688-33.886718c-4.304687-12.90625-16.339843-21.578126-29.941406-21.578126h-95.011718v-30.933593c0-15.460938-12.570313-28.042969-28.027344-28.042969h-87.007813c-15.453125 0-28.027343 12.582031-28.027343 28.042969v30.933593h-95.007813c-13.605469 0-25.640625 8.671876-29.945313 21.578126l-11.304687 33.886718c-2.574219 7.714844-1.2695312 16.257813 3.484375 22.855469 4.753906 6.597656 12.445312 10.539063 20.578125 10.539063h11.816406l26.007813 321.605468c1.933594 23.863282 22.183594 42.558594 46.109375 42.558594h204.863281c23.921875 0 44.175781-18.695312 46.105469-42.5625l26.007812-321.601562h6.542969c8.132812 0 15.824219-3.941407 20.578125-10.535157 4.753906-6.597656 6.058594-15.144531 3.484375-22.859375zm-249.320312-84.441406h83.0625v28.976562h-83.0625zm162.804687 437.019531c-.679687 8.402344-7.796875 14.980469-16.203125 14.980469h-204.863281c-8.40625 0-15.523438-6.578125-16.203125-14.980469l-25.816406-319.183593h288.898437zm-298.566406-349.183593 9.269531-27.789063c.210938-.640625.808594-1.070313 1.484375-1.070313h333.082031c.675782 0 1.269532.429688 1.484375 1.070313l9.269531 27.789063zm0 0" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="m282.515625 465.957031c.265625.015625.527344.019531.792969.019531 7.925781 0 14.550781-6.210937 14.964844-14.21875l14.085937-270.398437c.429687-8.273437-5.929687-15.332031-14.199219-15.761719-8.292968-.441406-15.328125 5.925782-15.761718 14.199219l-14.082032 270.398437c-.429687 8.273438 5.925782 15.332032 14.199219 15.761719zm0 0" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="m120.566406 451.792969c.4375 7.996093 7.054688 14.183593 14.964844 14.183593.273438 0 .554688-.007812.832031-.023437 8.269531-.449219 14.609375-7.519531 14.160157-15.792969l-14.753907-270.398437c-.449219-8.273438-7.519531-14.613281-15.792969-14.160157-8.269531.449219-14.609374 7.519532-14.160156 15.792969zm0 0" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="m209.253906 465.976562c8.285156 0 15-6.714843 15-15v-270.398437c0-8.285156-6.714844-15-15-15s-15 6.714844-15 15v270.398437c0 8.285157 6.714844 15 15 15zm0 0" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="TableSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Name="mditableofcontents"
+                    Width="512"
+                    Height="512">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="512"
+                           Height="512"
+                           Fill="Transparent" />
+                <Rectangle Canvas.Left="5"
+                           Canvas.Top="65"
+                           Width="352"
+                           Height="78"
+                           Fill="{TemplateBinding Foreground}"
+                           Opacity="1"
+                           RadiusX="18"
+                           RadiusY="18"
+                           StrokeEndLineCap="Flat"
+                           StrokeLineJoin="Miter"
+                           StrokeMiterLimit="4"
+                           StrokeStartLineCap="Flat"
+                           StrokeThickness="0.950069" />
+                <Rectangle Canvas.Left="370"
+                           Canvas.Top="65"
+                           Width="136"
+                           Height="78"
+                           Fill="{TemplateBinding Foreground}"
+                           RadiusX="18"
+                           RadiusY="18"
+                           StrokeEndLineCap="Flat"
+                           StrokeLineJoin="Miter"
+                           StrokeMiterLimit="4"
+                           StrokeStartLineCap="Flat"
+                           StrokeThickness="0.590425" />
+                <Rectangle Canvas.Left="5"
+                           Canvas.Top="220"
+                           Width="352"
+                           Height="78"
+                           Fill="{TemplateBinding Foreground}"
+                           RadiusX="18"
+                           RadiusY="18"
+                           StrokeEndLineCap="Flat"
+                           StrokeLineJoin="Miter"
+                           StrokeMiterLimit="4"
+                           StrokeStartLineCap="Flat"
+                           StrokeThickness="0.950069" />
+                <Rectangle Canvas.Left="370"
+                           Canvas.Top="220"
+                           Width="136"
+                           Height="78"
+                           Fill="{TemplateBinding Foreground}"
+                           RadiusX="18"
+                           RadiusY="18"
+                           StrokeEndLineCap="Flat"
+                           StrokeLineJoin="Miter"
+                           StrokeMiterLimit="4"
+                           StrokeStartLineCap="Flat"
+                           StrokeThickness="0.590425" />
+                <Rectangle Canvas.Left="5"
+                           Canvas.Top="380"
+                           Width="352"
+                           Height="78"
+                           Fill="{TemplateBinding Foreground}"
+                           RadiusX="18"
+                           RadiusY="18"
+                           StrokeEndLineCap="Flat"
+                           StrokeLineJoin="Miter"
+                           StrokeMiterLimit="4"
+                           StrokeStartLineCap="Flat"
+                           StrokeThickness="0.950069" />
+                <Rectangle Canvas.Left="370"
+                           Canvas.Top="380"
+                           Width="136"
+                           Height="78"
+                           Fill="{TemplateBinding Foreground}"
+                           RadiusX="18"
+                           RadiusY="18"
+                           StrokeEndLineCap="Flat"
+                           StrokeLineJoin="Miter"
+                           StrokeMiterLimit="4"
+                           StrokeStartLineCap="Flat"
+                           StrokeThickness="0.590425" />
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="TilesSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="512" Height="512">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="512"
+                           Height="512"
+                           Fill="Transparent" />
+                <Canvas>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="m 301.492 347.177 h -91.361 c -7.614 0 -14.084 2.662 -19.414 7.994 -5.33 5.331 -7.992 11.8 -7.992 19.41 v 54.823 c 0 7.611 2.662 14.089 7.992 19.417 5.327 5.328 11.8 7.987 19.414 7.987 h 91.361 c 7.618 0 14.086 -2.662 19.418 -7.987 5.325 -5.331 7.994 -11.806 7.994 -19.417 v -54.823 c 0 -7.61 -2.662 -14.085 -7.994 -19.41 -5.332 -5.325 -11.8 -7.994 -19.418 -7.994 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M 118.771 347.177 H 27.406 c -7.611 0 -14.084 2.662 -19.414 7.994 C 2.663 360.502 0 366.974 0 374.585 v 54.826 c 0 7.61 2.663 14.086 7.992 19.41 5.33 5.332 11.803 7.991 19.414 7.991 h 91.365 c 7.611 0 14.084 -2.663 19.414 -7.991 5.33 -5.324 7.992 -11.8 7.992 -19.41 v -54.826 c 0 -7.611 -2.662 -14.083 -7.992 -19.411 -5.33 -5.328 -11.803 -7.997 -19.414 -7.997 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M 118.771 54.814 H 27.406 c -7.611 0 -14.084 2.663 -19.414 7.993 C 2.663 68.137 0 74.61 0 82.221 v 54.821 c 0 7.616 2.663 14.091 7.992 19.417 5.33 5.327 11.803 7.994 19.414 7.994 h 91.365 c 7.611 0 14.084 -2.667 19.414 -7.994 5.33 -5.327 7.992 -11.798 7.992 -19.414 v -54.82 c 0 -7.611 -2.662 -14.084 -7.992 -19.417 -5.33 -5.328 -11.803 -7.994 -19.414 -7.994 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="m 301.492 200.999 h -91.361 c -7.614 0 -14.084 2.664 -19.414 7.994 -5.33 5.33 -7.992 11.798 -7.992 19.414 v 54.823 c 0 7.61 2.662 14.078 7.992 19.406 5.327 5.329 11.8 7.994 19.414 7.994 h 91.361 c 7.618 0 14.086 -2.665 19.418 -7.994 5.325 -5.328 7.994 -11.796 7.994 -19.406 v -54.823 c 0 -7.616 -2.662 -14.087 -7.994 -19.414 -5.332 -5.327 -11.8 -7.994 -19.418 -7.994 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M 118.771 200.999 H 27.406 c -7.611 0 -14.084 2.664 -19.414 7.994 C 2.663 214.32 0 220.791 0 228.407 v 54.823 c 0 7.61 2.663 14.078 7.992 19.406 5.33 5.329 11.803 7.994 19.414 7.994 h 91.365 c 7.611 0 14.084 -2.665 19.414 -7.994 5.33 -5.328 7.992 -11.796 7.992 -19.406 v -54.823 c 0 -7.616 -2.662 -14.087 -7.992 -19.414 -5.33 -5.327 -11.803 -7.994 -19.414 -7.994 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="m 503.632 62.811 c -5.332 -5.327 -11.8 -7.993 -19.41 -7.993 h -91.365 c -7.61 0 -14.086 2.663 -19.417 7.993 -5.325 5.33 -7.987 11.803 -7.987 19.414 v 54.821 c 0 7.616 2.662 14.083 7.987 19.414 5.331 5.327 11.807 7.994 19.417 7.994 h 91.365 c 7.61 0 14.078 -2.667 19.41 -7.994 5.332 -5.327 7.994 -11.798 7.994 -19.414 V 82.225 c 0 -7.612 -2.662 -14.084 -7.994 -19.414 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="m 301.492 54.818 h -91.361 c -7.614 0 -14.084 2.663 -19.414 7.993 -5.33 5.33 -7.992 11.803 -7.992 19.414 v 54.821 c 0 7.616 2.662 14.083 7.992 19.414 5.327 5.327 11.8 7.994 19.414 7.994 h 91.361 c 7.618 0 14.086 -2.664 19.418 -7.994 5.325 -5.327 7.994 -11.798 7.994 -19.414 V 82.225 c 0 -7.611 -2.662 -14.084 -7.994 -19.414 -5.332 -5.327 -11.8 -7.993 -19.418 -7.993 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="m 484.222 200.999 h -91.365 c -7.61 0 -14.086 2.664 -19.417 7.994 -5.325 5.33 -7.987 11.798 -7.987 19.414 v 54.823 c 0 7.61 2.662 14.078 7.987 19.406 5.331 5.329 11.807 7.994 19.417 7.994 h 91.365 c 7.61 0 14.085 -2.665 19.41 -7.994 5.332 -5.328 7.994 -11.796 7.994 -19.406 v -54.823 c 0 -7.616 -2.662 -14.087 -7.994 -19.414 -5.332 -5.33 -11.799 -7.994 -19.41 -7.994 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="m 484.222 347.177 h -91.365 c -7.61 0 -14.086 2.662 -19.417 7.994 -5.325 5.331 -7.987 11.8 -7.987 19.41 v 54.823 c 0 7.611 2.662 14.089 7.987 19.417 5.331 5.328 11.807 7.987 19.417 7.987 h 91.365 c 7.61 0 14.085 -2.662 19.41 -7.987 5.332 -5.331 7.994 -11.806 7.994 -19.417 v -54.823 c 0 -7.61 -2.662 -14.085 -7.994 -19.41 -5.332 -5.325 -11.799 -7.994 -19.41 -7.994 z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="AddSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="15" Height="15">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="15"
+                           Height="15"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M7.5 0C3.364 0 0 3.364 0 7.5S3.364 15 7.5 15S15 11.636 15 7.5S11.636 0 7.5 0z M7.5 14C3.916 14 1 11.084 1 7.5  S3.916 1 7.5 1S14 3.916 14 7.5S11.084 14 7.5 14z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Polygon Fill="{TemplateBinding Foreground}"
+                         FillRule="NonZero"
+                         Points="8,3.5 7,3.5 7,7 3.5,7 3.5,8 7,8 7,11.5 8,11.5 8,8 11.5,8 11.5,7 8,7 " />
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="BookmarkSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20A8 8 0 0 1 4 12A8 8 0 0 1 12 4M12 6A6 6 0 0 0 6 12A6 6 0 0 0 12 18A6 6 0 0 0 18 12A6 6 0 0 0 12 6M12 8A4 4 0 0 1 16 12A4 4 0 0 1 12 16A4 4 0 0 1 8 12A4 4 0 0 1 12 8Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="MoveToGroupSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M14 18V15H10V11H14V8L19 13M20 6H12L10 4H4C2.89 4 2 4.89 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V8C22 6.89 21.1 6 20 6Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="EditSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="485" Height="485">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="485"
+                           Height="485"
+                           Fill="Transparent" />
+                <Canvas>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M467.476 146.438l-21.445 21.455L317.35 39.23l21.445-21.457c23.689-23.692 62.104-23.692 85.795 0l42.886 42.897   C491.133 84.349 491.133 122.748 467.476 146.438z M167.233 403.748c-5.922 5.922-5.922 15.513 0 21.436   c5.925 5.955 15.521 5.955 21.443 0L424.59 189.335l-21.469-21.457L167.233 403.748z M60 296.54c-5.925 5.927-5.925 15.514 0 21.44   c5.922 5.923 15.518 5.923 21.443 0L317.35 82.113L295.914 60.67L60 296.54z M338.767 103.54L102.881 339.421   c-11.845 11.822-11.815 31.041 0 42.886c11.85 11.846 31.038 11.901 42.914-0.032l235.886-235.837L338.767 103.54z    M145.734 446.572c-7.253-7.262-10.749-16.465-12.05-25.948c-3.083 0.476-6.188 0.919-9.36 0.919   c-16.202 0-31.419-6.333-42.881-17.795c-11.462-11.491-17.77-26.687-17.77-42.887c0-2.954 0.443-5.833 0.859-8.703   c-9.803-1.335-18.864-5.629-25.972-12.737c-0.682-0.677-0.917-1.596-1.538-2.338L0 485.216l147.748-36.986   C147.097 447.637 146.36 447.193 145.734 446.572z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="AcceptSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="128" Height="128">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="128"
+                           Height="128"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M64 0a64 64 0 1 0 64 64A64.07 64.07 0 0 0 64 0Zm0 122a58 58 0 1 1 58-58A58.07 58.07 0 0 1 64 122Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M87.9 42.36 50.42 79.22 40.17 68.43a3 3 0 0 0-4.35 4.13l12.35 13a3 3 0 0 0 2.12.93h.05a3 3 0 0 0 2.1-.86l39.65-39a3 3 0 1 0-4.21-4.28Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DeclineSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Canvas>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12S18.617 0 12 0z M12 23C5.935 23 1 18.065 1 12S5.935 1 12 1   s11 4.935 11 11S18.065 23 12 23z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="{TemplateBinding Foreground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M15.854 8.146c-0.195-0.195-0.512-0.195-0.707 0L12 11.293L8.854 8.146c-0.195-0.195-0.512-0.195-0.707 0   s-0.195 0.512 0 0.707L11.293 12l-3.146 3.146c-0.195 0.195-0.195 0.512 0 0.707C8.244 15.951 8.372 16 8.5 16   s0.256-0.049 0.354-0.146L12 12.707l3.146 3.146C15.244 15.951 15.372 16 15.5 16s0.256-0.049 0.354-0.146   c0.195-0.195 0.195-0.512 0-0.707L12.707 12l3.146-3.146C16.049 8.658 16.049 8.342 15.854 8.146z" FillRule="NonZero" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SortAscSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M19 17H22L18 21L14 17H17V3H19M11 13V15L7.67 19H11V21H5V19L8.33 15H5V13M9 3H7C5.9 3 5 3.9 5 5V11H7V9H9V11H11V5C11 3.9 10.11 3 9 3M9 7H7V5H9Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SortDescSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="24" Height="24">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="24"
+                           Height="24"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M19 7H22L18 3L14 7H17V21H19M11 13V15L7.67 19H11V21H5V19L8.33 15H5V13M9 3H7C5.9 3 5 3.9 5 5V11H7V9H9V11H11V5C11 3.9 10.11 3 9 3M9 7H7V5H9Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="MoreSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="32" Height="32">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="32"
+                           Height="32"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M29 16c0 1.104-0.896 2-2 2H11c-1.104 0-2-0.896-2-2s0.896-2 2-2h16C28.104 14 29 14.896 29 16z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M29 6c0 1.104-0.896 2-2 2H11C9.896 8 9 7.104 9 6s0.896-2 2-2h16C28.104 4 29 4.896 29 6z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M29 26c0 1.104-0.896 2-2 2H11c-1.104 0-2-0.896-2-2s0.896-2 2-2h16C28.104 24 29 24.896 29 26z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M3 6c0 1.103 0.897 2 2 2s2-0.897 2-2S6.103 4 5 4S3 4.897 3 6z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M3 16c0 1.103 0.897 2 2 2s2-0.897 2-2s-0.897-2-2-2S3 14.897 3 16z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M3 26c0 1.103 0.897 2 2 2s2-0.897 2-2s-0.897-2-2-2S3 24.897 3 26z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="MoreVerticalSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="408"
+                    Height="408">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="408"
+                           Height="408"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M204 102c28.05 0 51-22.95 51-51S232.05 0 204 0s-51 22.95-51 51S175.95 102 204 102z M204 153c-28.05 0-51 22.95-51 51    s22.95 51 51 51s51-22.95 51-51S232.05 153 204 153z M204 306c-28.05 0-51 22.95-51 51s22.95 51 51 51s51-22.95 51-51    S232.05 306 204 306z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="MoreHorizontalSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="408"
+                    Height="408">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="408"
+                           Height="408"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M51 153c-28.05 0-51 22.95-51 51s22.95 51 51 51s51-22.95 51-51S79.05 153 51 153z M357 153c-28.05 0-51 22.95-51 51    s22.95 51 51 51s51-22.95 51-51S385.05 153 357 153z M204 153c-28.05 0-51 22.95-51 51s22.95 51 51 51s51-22.95 51-51    S232.05 153 204 153z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CheckAllSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="128" Height="128">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="128"
+                           Height="128"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M114 128H2a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2H114a2 2 0 0 1 2 2V126A2 2 0 0 1 114 128ZM4 124H112V16H4Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M126 118a2 2 0 0 1-2-2V4H12a2 2 0 0 1 0-4H126a2 2 0 0 1 2 2V116A2 2 0 0 1 126 118Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M61.57 96.18a2 2 0 0 1-1.42-.58l-3.66-3.66a2 2 0 0 1 2.83-2.83l2.11 2.11 39-46.69a2 2 0 1 1 3.06 2.57L63.1 95.47a2 2 0 0 1-1.45.71Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M42.3 96.18a2 2 0 0 1-1.42-.58L12.59 67.3a2 2 0 1 1 2.82-2.83L42.16 91.22l39-46.69a2 2 0 1 1 3.06 2.57L43.83 95.47a2 2 0 0 1-1.45.71Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="CheckManySVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="128" Height="128">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="128"
+                           Height="128"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M114 128H2a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2H114a2 2 0 0 1 2 2V126A2 2 0 0 1 114 128ZM4 124H112V16H4Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M126 118a2 2 0 0 1-2-2V4H12a2 2 0 0 1 0-4H126a2 2 0 0 1 2 2V116A2 2 0 0 1 126 118Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Rectangle Canvas.Left="30"
+                           Canvas.Top="40"
+                           Width="60"
+                           Height="60"
+                           Fill="{TemplateBinding Foreground}"
+                           StrokeThickness="0.866438" />
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+    <ControlTemplate x:Key="CheckNoneSVG" TargetType="ContentControl">
+        <Viewbox Stretch="Uniform">
+            <Canvas Width="128" Height="128">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0" />
+                </Canvas.RenderTransform>
+                <Rectangle Width="128"
+                           Height="128"
+                           Fill="Transparent" />
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M114 128H2a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2H114a2 2 0 0 1 2 2V126A2 2 0 0 1 114 128ZM4 124H112V16H4Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+                <Path Fill="{TemplateBinding Foreground}">
+                    <Path.Data>
+                        <PathGeometry Figures="M126 118a2 2 0 0 1-2-2V4H12a2 2 0 0 1 0-4H126a2 2 0 0 1 2 2V116A2 2 0 0 1 126 118Z" FillRule="NonZero" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+
+    </ControlTemplate>
+
+</ResourceDictionary>
