@@ -20,4 +20,41 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="SimpleToggleButton" TargetType="ToggleButton">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="ToggleControl" TargetType="ToggleButton">
+                    <Grid>
+                        <Border x:Name="FalseBorder"
+                                Background="Red"
+                                CornerRadius="10"
+                                Opacity="0.75" />
+                        <Border x:Name="TrueBorder"
+                                Background="Green"
+                                CornerRadius="10"
+                                Opacity="0.75" />
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="TrueBorder" Property="Opacity" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value="0.75" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.9" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

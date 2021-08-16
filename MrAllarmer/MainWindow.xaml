@@ -107,16 +107,18 @@
                         IconSource="clock.ico"
                         PopupActivation="LeftOrRightClick"
                         ToolTip="{DynamicResource TaskbarTooltip}"
-                        ToolTipText="Bzz"
+                        ToolTipText="Режим ожидания"
                         TrayPopup="{DynamicResource TaskbarPopup}" />
         <Border Grid.Row="0"
                 Grid.RowSpan="4"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Background="#080808"
-                CornerRadius="5" />
+                CornerRadius="10"
+                Opacity="0.9" />
         <TextBlock Grid.Row="1"
                    Grid.Column="1"
+                   Margin="10,0,0,0"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
                    FontSize="14"
@@ -132,12 +134,25 @@
                                 Foreground="AntiqueWhite"
                                 Template="{DynamicResource MinimizeSVG}" />
             </Button>
-            <!--<Button Click="CloseAppClick" Style="{DynamicResource SimpleButton}">
+            <Button Click="CloseAppClick" Style="{DynamicResource SimpleButton}">
                 <ContentControl MaxHeight="25"
                                 Foreground="AntiqueWhite"
                                 Template="{DynamicResource CloseSVG}" />
-            </Button>-->
+            </Button>
 
         </StackPanel>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ToggleButton Name="ChealWorkModeToggle"
+                          Grid.Row="0"
+                          Margin="10"
+                          Click="ChealWorkToggleClick"
+                          Content="Режим работы 25-5"
+                          Foreground="AntiqueWhite"
+                          Style="{DynamicResource SimpleToggleButton}" />
+        </Grid>
     </Grid>
 </Window>
