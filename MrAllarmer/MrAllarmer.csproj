@@ -15,12 +15,20 @@
 
   <ItemGroup>
     <None Remove="clock.ico" />
+    <None Remove="sounds\cheal_work_25\to_cheal.wav" />
+    <None Remove="sounds\cheal_work_25\to_work.wav" />
     <None Remove="sounds\mp3\base_alarm.mp3" />
     <None Remove="sounds\wav\base_alarm.wav" />
     <None Remove="sounds\wav\cheal_work_mode.wav" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="sounds\cheal_work_25\to_cheal.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\cheal_work_25\to_work.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="sounds\mp3\base_alarm.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -33,9 +41,6 @@
     <Resource Include="clock.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Content Include="sounds\wav\cheal_work_mode.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>

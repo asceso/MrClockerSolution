@@ -123,6 +123,7 @@
                    VerticalAlignment="Center"
                    FontSize="14"
                    Foreground="AntiqueWhite"
+                   MouseDown="HeaderMouseDown"
                    Text="Mr. Allarmer" />
         <StackPanel Grid.Row="1"
                     Grid.Column="1"

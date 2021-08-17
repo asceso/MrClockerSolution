@@ -1,4 +1,5 @@
 ﻿using Notifications.Wpf;
+using System;
 using System.Media;
 using System.Timers;
 using System.Windows;
@@ -23,6 +24,8 @@ namespace MrAllarmer
         private const string DisabledString = "Режим ожидания";
         private const string InChealString = "Отдых";
         private const string InWorkString = "Работа";
+        private const string ToChealSoundPath = @"./sounds/cheal_work_25/to_cheal.wav";
+        private const string ToWorkSoundPath = @"./sounds/cheal_work_25/to_work.wav";
         private readonly NotificationContent ChealStartContent = new()
         {
             Message = "До начала работы 5 минут",
@@ -42,53 +45,56 @@ namespace MrAllarmer
             Type = NotificationType.Success
         };
         private WorkChealModeState currentChealWorkModeState = WorkChealModeState.Disabled;
-        private readonly Timer chealModeTimer = new(300000);
-        private readonly Timer workModeTimer = new(1500000);
 
-        private void ChealModeTimerElapsed(object sender, ElapsedEventArgs e)
-        {
-            if (currentChealWorkModeState != WorkChealModeState.Disabled)
-            {
-                ShowFullNotifyWithStatus(ChealEndContent, @"./sounds/wav/cheal_work_mode.wav", InWorkString);
-                chealModeTimer.Stop();
-                chealModeTimer.Elapsed -= ChealModeTimerElapsed;
-                workModeTimer.Elapsed += WorkModeTimerElapsed;
-                workModeTimer.Start();
-            }
-        }
-        private void WorkModeTimerElapsed(object sender, ElapsedEventArgs e)
-        {
-            if (currentChealWorkModeState != WorkChealModeState.Disabled)
-            {
-                ShowFullNotifyWithStatus(ChealStartContent, @"./sounds/wav/cheal_work_mode.wav", InChealString);
-                workModeTimer.Stop();
-                workModeTimer.Elapsed -= WorkModeTimerElapsed;
-                chealModeTimer.Elapsed += ChealModeTimerElapsed;
-                chealModeTimer.Start();
-            }
-        }
+        private readonly Timer msWorkChealTimer = new(5);
+        private DateTime StartListeningStamp;
+
         private void ChealWorkToggleClick(object sender, RoutedEventArgs e)
         {
             switch (ChealWorkModeToggle.IsChecked)
             {
                 case true:
                     {
-                        ShowFullNotifyWithStatus(ChealStartContent, @"./sounds/wav/cheal_work_mode.wav", InChealString);
-                        currentChealWorkModeState = WorkChealModeState.InWork;
-                        chealModeTimer.Elapsed += ChealModeTimerElapsed;
-                        chealModeTimer.Start();
+                        ShowFullNotifyWithStatus(ChealStartContent, ToChealSoundPath, InChealString);
+                        currentChealWorkModeState = WorkChealModeState.InCheal;
+                        StartListeningStamp = DateTime.Now;
+                        msWorkChealTimer.Elapsed += MsWorkChealTimerElapsed;
+                        msWorkChealTimer.Start();
                     }
                     break;
                 case false:
                     {
-                        ShowFullNotifyWithStatus(ChealWorkModeDisabledContent, @"./sounds/wav/cheal_work_mode.wav", DisabledString);
+                        ShowFullNotifyWithStatus(ChealWorkModeDisabledContent, ToChealSoundPath, DisabledString);
                         currentChealWorkModeState = WorkChealModeState.Disabled;
-                        chealModeTimer.Elapsed -= ChealModeTimerElapsed;
-                        workModeTimer.Elapsed -= WorkModeTimerElapsed;
                     }
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void MsWorkChealTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            double stampMinutes = (DateTime.Now - StartListeningStamp).TotalMinutes;
+            if (currentChealWorkModeState == WorkChealModeState.Disabled)
+            {
+                msWorkChealTimer.Elapsed -= MsWorkChealTimerElapsed;
+                msWorkChealTimer.Stop();
+                return;
+            }
+            if (stampMinutes >= 5 && currentChealWorkModeState == WorkChealModeState.InCheal)
+            {
+                ShowFullNotifyWithStatus(ChealEndContent, ToWorkSoundPath, InWorkString);
+                StartListeningStamp = DateTime.Now;
+                currentChealWorkModeState = WorkChealModeState.InWork;
+                return;
+            }
+            if (stampMinutes >= 25 && currentChealWorkModeState == WorkChealModeState.InWork)
+            {
+                ShowFullNotifyWithStatus(ChealStartContent, ToChealSoundPath, InChealString);
+                StartListeningStamp = DateTime.Now;
+                currentChealWorkModeState = WorkChealModeState.InCheal;
+                return;
             }
         }
         private void ShowFullNotifyWithStatus(NotificationContent content, string pathToSound, string tooltipText)
@@ -123,6 +129,13 @@ namespace MrAllarmer
                         pp.IsOpen = false;
                     }
                 }
+            }
+        }
+        private void HeaderMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.RightButton == System.Windows.Input.MouseButtonState.Pressed)
+            {
+                DragMove();
             }
         }
 
