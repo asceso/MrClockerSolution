@@ -75,21 +75,24 @@ namespace MrAllarmer
 
         private void MsWorkChealTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            double stampMinutes = (DateTime.Now - StartListeningStamp).TotalMinutes;
+            double stampMinutes = (DateTime.Now - StartListeningStamp).TotalSeconds;
+
+            Application.Current.Dispatcher.Invoke(() => CalculateTimeLeft(NotifyIcon.ToolTipText));
+
             if (currentChealWorkModeState == WorkChealModeState.Disabled)
             {
                 msWorkChealTimer.Elapsed -= MsWorkChealTimerElapsed;
                 msWorkChealTimer.Stop();
                 return;
             }
-            if (stampMinutes >= 5 && currentChealWorkModeState == WorkChealModeState.InCheal)
+            if (stampMinutes >= 300 && currentChealWorkModeState == WorkChealModeState.InCheal)
             {
                 ShowFullNotifyWithStatus(ChealEndContent, ToWorkSoundPath, InWorkString);
                 StartListeningStamp = DateTime.Now;
                 currentChealWorkModeState = WorkChealModeState.InWork;
                 return;
             }
-            if (stampMinutes >= 25 && currentChealWorkModeState == WorkChealModeState.InWork)
+            if (stampMinutes >= 1500 && currentChealWorkModeState == WorkChealModeState.InWork)
             {
                 ShowFullNotifyWithStatus(ChealStartContent, ToChealSoundPath, InChealString);
                 StartListeningStamp = DateTime.Now;
@@ -105,6 +108,25 @@ namespace MrAllarmer
             player.LoadAsync();
             player.Play();
             Application.Current.Dispatcher.Invoke(() => NotifyIcon.ToolTipText = tooltipText);
+        }
+        private void CalculateTimeLeft(string baseText)
+        {
+            double secondsLeft = Math.Round((DateTime.Now - StartListeningStamp).TotalSeconds);
+
+            if (baseText.Contains(InChealString))
+            {
+                double secondsRemaining = 300 - secondsLeft;
+                double minutesRemaining = (int)(secondsRemaining / 60);
+                secondsRemaining -= minutesRemaining * 60;
+                NotifyIcon.ToolTipText = InChealString + $" (До работы осталось {minutesRemaining} мин. {secondsRemaining} сек.)";
+            }
+            else if (baseText.Contains(InWorkString))
+            {
+                double secondsRemaining = 1500 - secondsLeft;
+                double minutesRemaining = (int)(secondsRemaining / 60);
+                secondsRemaining -= minutesRemaining * 60;
+                NotifyIcon.ToolTipText = InWorkString + $" (До отдыха осталось {minutesRemaining} мин. {secondsRemaining} сек.)";
+            }
         }
 
         #endregion
